@@ -156,3 +156,22 @@ Action Filters: Run before and after the action method execution. Useful for log
 Exception Filters: Handle any unhandled exceptions during the execution of the pipeline.
 Result Filters: Run before and after the execution of the action result. Useful for modifying the response.
 These filters help in managing different aspects of request handling, enhancing the functionality and maintainability of your ASP.NET Core Web API.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Built-in Filters
+[Authorize]
+[ServiceFilter]
+Custom Filters
+ResourceFilterExample (implements IResourceFilter)
+ActionFilterExample (implements IActionFilter)
+ExceptionFilterExample (implements IExceptionFilter)
+ResultFilterExample (implements IResultFilter)
+Breakdown
+[Authorize]: This is a built-in filter used for authorization.
+[ServiceFilter]: This is a built-in attribute that allows dependency injection of custom filters.
+Custom Filters Implementation
+ResourceFilterExample: This custom filter is implemented using IResourceFilter.
+ActionFilterExample: This custom filter is implemented using IActionFilter.
+ExceptionFilterExample: This custom filter is implemented using IExceptionFilter.
+ResultFilterExample: This custom filter is implemented using IResultFilter.
+So, there are 2 built-in filters and 4 custom filters mentioned in the above examples.
