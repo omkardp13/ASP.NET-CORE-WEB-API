@@ -10,8 +10,7 @@ Model binding is a process where incoming request data is bound to controller ac
 Model binding is a process where incoming request data is bound to controller action parameters or to the properties of a model object. ASP.NET Core supports binding data from various sources, including route data, query strings, form fields, and request bodies.
 
 Example
-csharp
-Copy code
+
 public class ProductController : ControllerBase
 {
     [HttpGet("{id}")]
@@ -34,36 +33,40 @@ public class ProductController : ControllerBase
         return BadRequest(ModelState);
     }
 }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2. Attribute Routing and Binding Sources
 ASP.NET Core allows you to specify the source of the data using attributes like [FromRoute], [FromQuery], [FromBody], and [FromForm].
 
 Examples
+
 FromRoute: Binds data from the route.
-csharp
-Copy code
+
 [HttpGet("{id}")]
 public IActionResult GetProduct([FromRoute] int id) { ... }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 FromQuery: Binds data from the query string.
-csharp
-Copy code
+
 [HttpGet]
 public IActionResult GetProductByName([FromQuery] string name) { ... }
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 FromBody: Binds data from the request body.
-csharp
-Copy code
+
 [HttpPost]
 public IActionResult CreateProduct([FromBody] Product model) { ... }
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 FromForm: Binds data from form fields.
-csharp
-Copy code
 [HttpPost]
 public IActionResult UploadProduct([FromForm] IFormFile file) { ... }
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 3. Complex Types and Nested Properties
 ASP.NET Core can bind complex types and their nested properties from the request data.
 
 Example
-csharp
-Copy code
+
 public class Order
 {
     public int Id { get; set; }
@@ -86,12 +89,13 @@ public IActionResult CreateOrder([FromBody] Order order)
     }
     return BadRequest(ModelState);
 }
-4. Custom Model Binding
-You can create custom model binders if the default binding logic does not meet your needs.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Custom Model Binding : You can create custom model binders if the default binding logic does not meet your needs.
 
 Example
-csharp
-Copy code
+
 public class CustomDateModelBinder : IModelBinder
 {
     public Task BindModelAsync(ModelBindingContext bindingContext)
@@ -137,12 +141,15 @@ public void ConfigureServices(IServiceCollection services)
         options.ModelBinderProviders.Insert(0, new CustomDateModelBinderProvider());
     });
 }
-5. Validation
-ASP.NET Core supports validation through data annotations and custom validation logic. The ModelState object is used to check the validation state of the model.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5. Validation :ASP.NET Core supports validation through data annotations and custom validation logic. 
+               The ModelState object is used to check the validation state 
+               of the model.
 
 Example
-csharp
-Copy code
+
 public class Product
 {
     public int Id { get; set; }
