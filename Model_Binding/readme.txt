@@ -3,11 +3,13 @@ Data Binding --->
 2.ASP.NET core provides several mechanism to achieve this,enabling developrs to easy hndle input data from clients and map it to strongly typed objects.
 
 1.Model Binding:
-Model binding is a process where incoming request data is bound to controller action parameters or to the properties of a model object. ASP.NET Core supports binding data from various sources, including route data, query strings, form fields, and request bodies.
---------------------------------------------------------------------------------
+Model binding is a process where incoming request data is bound to controller action parameters or to the properties of a model object. 
+ASP.NET Core supports binding data from various sources, including route data, query strings, form fields, and request bodies.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 1. Model Binding
-Model binding is a process where incoming request data is bound to controller action parameters or to the properties of a model object. ASP.NET Core supports binding data from various sources, including route data, query strings, form fields, and request bodies.
+Model binding is a process where incoming request data is bound to controller action parameters or to the properties of a model object. 
+ASP.NET Core supports binding data from various sources, including route data, query strings, form fields, and request bodies.
 
 Example
 
